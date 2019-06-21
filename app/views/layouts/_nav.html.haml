@@ -1,0 +1,21 @@
+%nav.navbar.navbar-default{ role: 'navigation' }
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle{ data: { target: '#navbar-news-blog', toggle: 'collapse' }, type: 'button' }
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{ href: '/' } Booking Airways
+    #navbar-news-blog.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li
+          = link_to 'Билеты', '#'
+
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          - if user_signed_in?
+
+            = link_to 'Выход', destroy_user_session_path, method: :delete
+          - else
+            = link_to 'Войти', new_user_session_path

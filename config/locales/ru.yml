@@ -1,0 +1,25 @@
+ru:
+  user:
+    gender:
+      male: Мужской
+      female: Женский
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: такой уже существует
+              invalid: ^Введите правильный Email
+              blank: не может быть пустым
+            last_name:
+              blank: ^Введите фамилию
+            first_name:
+              blank: ^Введите имя
+            password:
+              too_short: ^Слишком короткий пароль
+              too_long: ^Слишком длинный пароль
+              blank: ^Введите пароль
+            password_confirmation:
+              confirmation: ^Введенный пароль не совпадает

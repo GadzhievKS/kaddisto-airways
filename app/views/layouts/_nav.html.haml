@@ -1,16 +1,18 @@
 %nav.navbar.navbar-default{ role: 'navigation' }
   .container-fluid
     .navbar-header
-      %button.navbar-toggle{ data: { target: '#navbar-news-blog', toggle: 'collapse' }, type: 'button' }
+      %button.navbar-toggle{ data: { target: '#navbar-booking-airways', toggle: 'collapse' }, type: 'button' }
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{ href: '/' } Booking Airways
-    #navbar-news-blog.collapse.navbar-collapse
-      %ul.nav.navbar-nav
+      %a.navbar-brand{ href: '/' } Kaddisto Airways
+    #navbar-booking-airways.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-center
         %li
-          = link_to 'Билеты', '#'
+          = link_to 'Бронирование', '/'
+        %li
+          = link_to 'Мои бронирования', '#'
 
       %ul.nav.navbar-nav.navbar-right
         %li

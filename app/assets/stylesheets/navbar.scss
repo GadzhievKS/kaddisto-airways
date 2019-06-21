@@ -1,0 +1,31 @@
+.navbar-default {
+  border-top: 3px solid purple;
+  border-radius: 0;
+
+  .navbar-nav > li > a {
+    color: black;
+    font-weight: 600;
+  }
+  .navbar-right > li > a:hover{
+    color: #F21F1F;
+  }
+
+  .navbar-brand:hover {
+    color: black;
+  }
+
+  .navbar-brand {
+    color: #000;
+    font-weight: 700;
+    font-size: xx-large;
+  }
+
+  .navbar-center > li {
+    margin-right: 5px;
+  }
+
+  li.active {
+    font-weight: 600;
+    border-bottom: 1px solid orange;
+  }
+}

@@ -6,7 +6,6 @@
     = f.input :email, autofocus: true, autocomplete: 'email', label: 'Email', placeholder: 'Введите email'
     = f.input :password, autocomplete: 'current-password', label: 'Пароль', placeholder: 'Введите пароль'
     = f.input :remember_me, as: :boolean, label: 'Запомнить меня'
-
     .actions
       = f.submit 'Войти', class: 'btn btn-primary'
   .shared-links.text-center

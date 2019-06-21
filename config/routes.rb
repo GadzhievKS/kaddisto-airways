@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, controllers: {
+      sessions: 'users/sessions',
+      sign_in: 'users/login',
+      sign_out: 'users/logout',
+      passwords: 'users/passwords',
+      registrations: 'users/registrations'
+  }
 end

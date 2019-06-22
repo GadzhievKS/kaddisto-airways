@@ -1,7 +1,7 @@
-.log-in, .sign-up, .forgout-password{
+.log-in, .sign-up, .forgout-password {
   width: 320px;
   margin: 0 auto;
-  box-shadow: 0px 2px 8px 8px rgba(0,0,0,0.3);
+  box-shadow: 0px 2px 8px 8px rgba(0, 0, 0, 0.3);
   border-radius: 2px;
   padding: 20px;
 
@@ -9,7 +9,7 @@
     font-weight: normal;
   }
 
-  .form-check  {
+  .form-check {
     .form-check-label {
       padding-left: 5px;
     }
@@ -21,14 +21,19 @@
 
     input {
       width: 100%;
-      border-radius: 20px;
+      background-color: #f26c00;
+      border-color: #f26c00;
+
+      &:active {
+        background-color: #f26c00;
+        border-color: #f26c00;
+      }
+    }
+
+    .shared-links {
+      padding-top: 20px;
     }
   }
-
-  .shared-links {
-    padding-top: 15px;
-  }
-
   .img-logo {
     width: 96px;
     height: 96px;

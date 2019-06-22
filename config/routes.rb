@@ -7,5 +7,11 @@ Rails.application.routes.draw do
       registrations: 'users/registrations'
   }
 
+  resources :tickets
+  resources :aircrafts
+  resources :airlines
+  resources :airports
+
+
   root 'application#index'
 end

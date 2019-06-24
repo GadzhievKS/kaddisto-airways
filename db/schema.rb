@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(version: 2019_06_24_005742) do
   create_table "tickets", force: :cascade do |t|
     t.integer "price"
     t.datetime "time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "airport_id"
     t.integer "aircraft_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "from"
     t.string "to"
   end

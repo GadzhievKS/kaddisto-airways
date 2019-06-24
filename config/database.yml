@@ -5,12 +5,12 @@ default: &default
 
 development:
   <<: *default
-  database: booking_airways_dev
+  database: kaddisto_airways_dev
 
 test:
   <<: *default
-  database: booking_airways_test
+  database: kaddisto_airways_test
 
 production:
   <<: *default
-  database: booking_airways_prod
+  database: kaddisto_airways_prod

@@ -1,0 +1,5 @@
+.new-aicraft
+  %h1.text-center Добавить новый самолет
+  = render 'form', aircraft: @aircraft do |f|
+    = f.submit 'Добавить', class: 'btn btn-primary'
+    = link_to 'Назад', aircrafts_path, class: 'back btn btn-default'

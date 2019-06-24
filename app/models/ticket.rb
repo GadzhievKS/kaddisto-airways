@@ -1,4 +1,6 @@
 class Ticket < ApplicationRecord
-  validates :price, :time, :place_departure, :place_arrival, presence: true
+  belongs_to :aircraft
+  belongs_to :airport
 
+  validates :from, :to, :time, :price, presence: true
 end

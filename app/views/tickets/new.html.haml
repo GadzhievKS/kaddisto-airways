@@ -1,0 +1,5 @@
+.new-ticket
+  %h1.text-center Добавить новый билет
+  = render 'form', ticket: @ticket do |f|
+    = f.submit 'Добавить', class: 'btn btn-primary'
+    = link_to 'Назад', tickets_path, class: 'back btn btn-default'

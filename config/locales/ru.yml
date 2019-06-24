@@ -1,9 +1,4 @@
 ru:
-  user:
-    gender:
-      male: Мужской
-      female: Женский
-
   activerecord:
     errors:
       models:
@@ -23,3 +18,47 @@ ru:
               blank: ^Введите пароль
             password_confirmation:
               confirmation: ^Введенный пароль не совпадает
+        ticket:
+          attributes:
+            from:
+              blank: ^Введите место отправления
+            to:
+              blank: ^Введите место прибытия
+            price:
+              blank: ^Введите цену
+            aircraft:
+              required: ^Выберите самолет из списка
+            airport:
+              required: ^Выберите аэропорт из списка
+        aircraft:
+          attributes:
+            name:
+              blank: ^Введите название
+            seat_counts:
+              blank: ^Введите количество мест
+            airline:
+              required: ^Выберите авиакомпанию из списка
+
+  date:
+    formats:
+      default: "%d.%m.%Y"
+      long: "%-d %B %Y"
+      short: "%-d %b"
+    month_names:
+      -
+      - января
+      - февраля
+      - марта
+      - апреля
+      - мая
+      - июня
+      - июля
+      - августа
+      - сентября
+      - октября
+      - ноября
+      - декабря
+    order:
+      - :day
+      - :month
+      - :year

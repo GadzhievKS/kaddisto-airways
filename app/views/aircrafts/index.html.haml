@@ -1,0 +1,17 @@
+.index-aicraft
+  %h1.text-center.title Самолеты
+  = link_to 'Добавить самолет', new_aircraft_path, class: 'new btn btn-primary'
+  %table.table.table-hover
+    %thead
+      %th
+      %th Наименование
+      %th Количество мест
+      %th Авиакомпания
+    %tbody
+      - @aircrafts.each do |aircraft|
+        %tr
+          %td= aircraft.id
+          %td= aircraft.name
+          %td= aircraft.seat_counts
+          %td= aircraft.airline.name
+

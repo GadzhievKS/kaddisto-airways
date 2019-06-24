@@ -1,0 +1,10 @@
+= simple_form_for @ticket do |f|
+  = f.input :from, label: 'Откуда', required: false
+  = f.input :to, label: 'Куда', required: false
+  = f.input :time, label: 'Время'
+  = f.input :price, label: 'Цена', required: false
+  = f.association :aircraft, label: 'Самолет', required: false
+  = f.association :airport, label: 'Аэропорт', required: false
+
+  .actions
+    = yield(f)

@@ -1,3 +1,5 @@
 class Airport < ApplicationRecord
-  has_many :airport
+  has_many :aircrafts
+
+  validates :name, :city, presence: true
 end

@@ -1,0 +1,18 @@
+.index-airline
+  %h1.text-center.title Авиакомпании
+  = link_to 'Добавить авиакомпанию', new_airline_path, class: 'new btn btn-primary'
+  %table.table.table-hover
+    %thead
+      %th №
+      %th Наименование
+      %th Страна
+      %th Действия
+    %tbody
+      - @airlines.each do |airline|
+        %tr
+          %td= airline.id
+          %td= airline.name
+          %td= airline.country
+          %td
+            = link_to 'Редактировать', '#', class: 'btn btn-default'
+            = link_to 'Удалить', '#', class: 'btn btn-danger'

@@ -1,0 +1,5 @@
+.new-airport
+  %h1.text-center Добавить новый аэропорт
+  = render 'form', airport: @airport do |f|
+    = f.submit 'Добавить', class: 'btn btn-primary'
+    = link_to 'Назад', airports_path, class: 'back btn btn-default'

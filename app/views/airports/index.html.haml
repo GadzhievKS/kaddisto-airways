@@ -1,0 +1,18 @@
+.index-airport
+  %h1.text-center.title Аэропорты
+  = link_to 'Добавить аэропорт', new_airport_path, class: 'new btn btn-primary'
+  %table.table.table-hover
+    %thead
+      %th №
+      %th Наименование
+      %th Город
+      %th Действия
+    %tbody
+      - @airports.each do |airport|
+        %tr
+          %td= airport.id
+          %td= airport.name
+          %td= airport.city
+          %td
+            = link_to 'Редактировать', '#', class: 'btn btn-default'
+            = link_to 'Удалить', '#', class: 'btn btn-danger'

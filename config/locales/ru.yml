@@ -38,6 +38,18 @@ ru:
               blank: ^Введите количество мест
             airline:
               required: ^Выберите авиакомпанию из списка
+        airport:
+          attributes:
+            name:
+              blank: ^Введите название
+            city:
+              blank: ^Введите город
+        airlinr:
+          attributes:
+            name:
+              blank: ^Введите название
+            country:
+              blank: ^Введите страну
 
   date:
     formats:

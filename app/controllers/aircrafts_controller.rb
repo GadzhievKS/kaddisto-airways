@@ -1,4 +1,6 @@
 class AircraftsController < ApplicationController
+  before_action :authenticate_user!, only: %i(new edit create edit destroy)
+  before_action :set_aircraft, only: [:show, :edit, :update, :destroy]
   # GET /aircrafts
   # GET /aircrafts.json
   def index
@@ -25,6 +27,30 @@ class AircraftsController < ApplicationController
   def new
     @aircraft = Aircraft.new
   end
+
+  def update
+    if @aircraft.update_attributes(aircraft_params)
+      redirect_to aircrafts_path, success: 'Самолет успешно обновлен'
+    else
+      render :edit, danger: 'Самолет не обновлен'
+    end
+  end
+
+  def edit
+
+  end
+
+  def destroy
+    @aircraft.destroy
+    redirect_to aircrafts_path, success: 'Самолет успешно удален'
+  end
+
+  private
+
+  def set_aircraft
+    @aircraft = Aircraft.find(params[:id])
+  end
+
 
   private
   def aircraft_params

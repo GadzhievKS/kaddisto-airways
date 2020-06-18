@@ -1,7 +1,7 @@
 .index-ticket
   %h1.text-center.title Билеты
   = link_to 'Добавить билет', new_ticket_path, class: 'new btn btn-primary'
-  %table.table.table-hover
+  %table.table.table-bordered
     %thead
       %th №
       %th Откуда
@@ -18,5 +18,7 @@
           %td= ticket.departure_time
           %td= ticket.price
           %td
-            = link_to 'Редактировать', '#', class: 'btn btn-default'
-            = link_to 'Удалить', '#', class: 'btn btn-danger'
+            = link_to 'Редактировать', edit_ticket_path(ticket),
+          class: 'btn btn-default'
+            = link_to 'Удалить',  ticket_path(ticket), method:  :delete,
+                                data: {confirm: 'Вы уверены?'}, class: 'btn btn-danger'

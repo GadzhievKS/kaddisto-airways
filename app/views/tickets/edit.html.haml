@@ -1,0 +1,5 @@
+.edit-ticket
+  %h1 Редактировать самолет
+  = render 'form', ticket: @ticket do |f|
+    = f.submit 'Сохранить', class: 'btn btn-primary'
+    = link_to 'Назад', tickets_path, class: 'back btn btn-default'

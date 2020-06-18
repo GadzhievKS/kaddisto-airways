@@ -10,14 +10,11 @@
     #navbar-kaddisto-airways.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-center
         %li
-          = link_to 'Бронирование', '/'
+          = link_to 'Бронирование', tickets_path
         %li
           = link_to 'Мои бронирования', '#'
-
       %ul.nav.navbar-nav.navbar-right
         - if  user_signed_in? && current_user.admin?
-          %li
-            = link_to 'Билеты', tickets_path
           %li
             = link_to 'Самолеты', aircrafts_path
           %li

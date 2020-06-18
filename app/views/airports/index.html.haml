@@ -1,7 +1,7 @@
 .index-airport
   %h1.text-center.title Аэропорты
   = link_to 'Добавить аэропорт', new_airport_path, class: 'new btn btn-primary'
-  %table.table.table-hover
+  %table.table.table-bordered
     %thead
       %th №
       %th Наименование
@@ -14,5 +14,7 @@
           %td= airport.name
           %td= airport.city
           %td
-            = link_to 'Редактировать', '#', class: 'btn btn-default'
-            = link_to 'Удалить', '#', class: 'btn btn-danger'
+            = link_to 'Редактировать', edit_airport_path(airport),
+          class: 'btn btn-default'
+            = link_to 'Удалить',  airport_path(airport), method:  :delete,
+                                data: {confirm: 'Вы уверены?'}, class: 'btn btn-danger'

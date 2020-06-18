@@ -1,4 +1,6 @@
 class AirportsController < ApplicationController
+  before_action :authenticate_user!, only: %i(new edit create edit destroy)
+  before_action :set_airport, only: [:show, :edit, :update, :destroy]
   # GET /airports
   # GET /airports.json
   def index
@@ -24,6 +26,29 @@ class AirportsController < ApplicationController
   # GET /airports/new
   def new
     @airport = Airport.new
+  end
+
+  def update
+    if @airport.update_attributes(airport_params)
+      redirect_to airports_path, success: 'Аэропорт успешно обновлен'
+    else
+      render :edit, danger: 'Аэропорт не обновлен'
+    end
+  end
+
+  def edit
+
+  end
+
+  def destroy
+    @airport.destroy
+    redirect_to airports_path, success: 'Статья успешно удалена'
+  end
+
+  private
+
+  def set_airport
+    @airport = Airport.find(params[:id])
   end
 
   private

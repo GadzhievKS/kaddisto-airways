@@ -1,7 +1,7 @@
 .index-aircraft
   %h1.text-center.title Самолеты
   = link_to 'Добавить самолет', new_aircraft_path, class: 'new btn btn-primary'
-  %table.table.table-hover
+  %table.table.table-bordered
     %thead
       %th №
       %th Наименование
@@ -14,7 +14,9 @@
           %td= aircraft.id
           %td= aircraft.name
           %td= aircraft.seat_counts
-          %td= aircraft.airline.name
+          %td= aircraft.name
           %td
-            = link_to 'Редактировать', '#', class: 'btn btn-default'
-            = link_to 'Удалить', '#', class: 'btn btn-danger'
+            = link_to 'Редактировать', edit_aircraft_path(aircraft),
+          class: 'btn btn-default'
+            = link_to 'Удалить',  aircraft_path(aircraft), method:  :delete,
+                                data: {confirm: 'Вы уверены?'}, class: 'btn btn-danger'

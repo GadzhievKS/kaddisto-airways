@@ -1,0 +1,5 @@
+.edit-airline
+  %h1 Редактировать авиакомпанию
+  = render 'form', airline: @airline do |f|
+    = f.submit 'Сохранить', class: 'btn btn-primary'
+    = link_to 'Назад', airlines_path, class: 'back btn btn-default'

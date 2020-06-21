@@ -1,5 +1,5 @@
 .edit-ticket
-  %h1 Редактировать самолет
+  %h1.text-center Редактировать билет
   = render 'form', ticket: @ticket do |f|
     = f.submit 'Сохранить', class: 'btn btn-primary'
     = link_to 'Назад', tickets_path, class: 'back btn btn-default'

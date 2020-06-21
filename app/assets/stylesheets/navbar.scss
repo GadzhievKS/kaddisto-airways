@@ -1,31 +1,19 @@
-.navbar-default {
-  border-top: 3px solid #481e80;
+.navbar {
+  border-bottom: 1px solid #F75725;
   border-radius: 0;
 
   .navbar-nav > li > a {
     color: black;
     font-weight: 600;
+    padding-top: 22px;
+    padding-bottom: 22px;
   }
+
   .navbar-right > li > a:hover{
-    color: #f23a25;
+    color: #F75725;
   }
 
-  .navbar-brand:hover {
-    color: black;
-  }
-
-  .navbar-brand {
-    color: #000;
-    font-weight: 700;
-    font-size: xx-large;
-  }
-
-  .navbar-center > li {
-    margin-right: 5px;
-  }
-
-  li.active {
-    font-weight: 600;
-    border-bottom: 1px solid #0603e8;
+  .nav > li > a:hover {
+    color: #F75725;
   }
 }

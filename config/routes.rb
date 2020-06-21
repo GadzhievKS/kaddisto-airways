@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   resources :aircrafts
   resources :airlines
   resources :airports
+  resources :my_tickets do
+    resources :tickets
+  end
 
 
   root 'application#index'
+
 end

@@ -1,5 +1,5 @@
 .edit-aircraft
-  %h1 Редактировать самолет
+  %h1.text-center Редактировать самолет
   = render 'form', aircraft: @aircraft do |f|
     = f.submit 'Сохранить', class: 'btn btn-primary'
     = link_to 'Назад', aircrafts_path, class: 'back btn btn-default'

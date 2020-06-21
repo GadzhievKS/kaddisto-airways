@@ -6,13 +6,15 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{ href: '/' } Kaddisto Airways
+      %a.navbar-brand{:href => "/"}
+      = image_tag(asset_path('plane.png'), class: 'd-inline-block align-top')
     #navbar-kaddisto-airways.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-center
-        %li
-          = link_to 'Бронирование', tickets_path
-        %li
-          = link_to 'Мои бронирования', '#'
+        -unless user_signed_in? && current_user.admin?
+          %li
+            = link_to 'Бронирование', new_my_ticket_ticket_path(:my_ticket_id)
+          %li
+            = link_to 'Мои бронирования', my_ticket_tickets_path(:id)
       %ul.nav.navbar-nav.navbar-right
         - if  user_signed_in? && current_user.admin?
           %li
@@ -21,6 +23,8 @@
             = link_to 'Аэропорты', airports_path
           %li
             = link_to 'Авиакомпании', airlines_path
+          %li
+            = link_to 'Добавить билет', new_ticket_path
         %li
           - if user_signed_in?
 

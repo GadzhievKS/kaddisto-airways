@@ -1,5 +1,8 @@
 .new-ticket
-  %h1.text-center Добавить новый билет
-  = render 'form', ticket: @ticket do |f|
+  - if current_user.admin?
+    %h1.text-center Добавить новый билет
+  -else
+    %h1.text-center Забронировать билет
+  = render 'form', my_ticket: @tickets do |f|
     = f.submit 'Добавить', class: 'btn btn-primary'
     = link_to 'Назад', tickets_path, class: 'back btn btn-default'

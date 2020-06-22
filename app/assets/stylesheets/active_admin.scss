@@ -12,7 +12,8 @@
 @import "active_admin/mixins";
 @import "active_admin/base";
 
-#new_flight {
+#new_flight, #new_ticket,
+#edit_flight, #edit_ticket {
   .select2-container {
     width: 30% !important;
   }

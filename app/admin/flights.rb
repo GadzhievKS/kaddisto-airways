@@ -7,7 +7,7 @@ ActiveAdmin.register Flight do
   index do
     selectable_column
     id_column
-    column :airline
+    column :aircraft
     column :from
     column :to
     column :price

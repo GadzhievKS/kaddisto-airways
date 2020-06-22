@@ -1,0 +1,59 @@
+.flights {
+  .title {
+    margin-bottom: 30px;
+  }
+  .btn-primary {
+    color: #fff;
+    background-color: #ff0000;
+    border-color: #ff0000;
+  }
+  .btn-default {
+    color: #000;
+    background-color: #e8cd0d;
+    border-color: #e8cd0d;
+  }
+  .btn-danger {
+    color: #000;
+    background-color: #ff0000;
+    border-color: #ff0000;
+    width: 123px;
+    margin: 5px auto;
+  }
+  .table-hover{
+    color: black;
+    width: 640px;
+    border-collapse: collapse;
+    background:#ffffff;
+    margin: 10px;
+  }
+  .table-hover th {
+    color: #000000;
+    border-bottom: 1px solid #f70000;
+    padding: 12px 60px;
+  }
+  .table-hover td {
+    color: #CAD4D6;
+    border-bottom: 1px solid #f70000;
+    border-right: 1px solid #f70000;
+    padding: 7px 60px;
+  }
+  .table-hover td {
+    border-color: #f70000;
+    border-bottom: none;
+    color: black;
+  }
+  .table-hover td:last-child {
+    border-right: none;
+  }
+  .table-hover tr:hover td {
+    text-decoration: underline;
+  }
+  .table-bordered > thead > tr > th,
+  .table-bordered > thead > tr > td,
+  .table-bordered > tbody > tr > th,
+  .table-bordered > tbody > tr > td,
+  .table-bordered > tfoot > tr > th,
+  .table-bordered > tfoot > tr > td {
+    border: 7px solid #d2d2d2;
+  }
+}

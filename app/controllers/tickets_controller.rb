@@ -1,26 +1,24 @@
 class TicketsController < ApplicationController
-  before_action :authenticate_user!, only: %i(new edit create edit destroy)
+  before_action :authenticate_user!
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
+  before_action :set_flight, only: %i[create]
 
   # GET /tickets
   # GET /tickets.json
   def index
-    @tickets = Ticket.all
+    @tickets = current_user.tickets
   end
 
   # POST /tickets
   # POST /tickets.json
   def create
-    @ticket = Ticket.new(ticket_params)
-
-    respond_to do |format|
-      if @ticket.save
-        format.html { redirect_to tickets_path, notice: 'Билет добавлен.' }
-        format.json { render :index, status: :created, location: tickets_path }
-      else
-        format.html { render :new }
-        format.json { render json: @ticket.errors, status: :unprocessable_entity }
-      end
+    @ticket = Ticket.new(user: current_user, flight: @flight)
+    @ticket.price = @flight.price
+    if @ticket.save
+      @flight.to_full!  if @flight.tickets.count >= @flight.aircraft.seat_counts.to_i
+      @result = 'success'
+    else
+      @result = 'error'
     end
   end
 
@@ -49,11 +47,11 @@ class TicketsController < ApplicationController
 
   private
 
+  def set_flight
+    @flight = Flight.find(params[:flight_id])
+  end
+
   def set_ticket
     @ticket = Ticket.find(params[:id])
   end
-
-    def ticket_params
-      params.fetch(:ticket, {}).permit(:from, :to, :time, :price, :aircraft_id, :airport_id)
-    end
 end

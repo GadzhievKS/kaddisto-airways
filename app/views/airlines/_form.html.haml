@@ -1,6 +1,0 @@
-= simple_form_for @airline do |f|
-  = f.input :name, label: 'Наименование', required: false
-  = f.input :country, as: :string, label: 'Страна', required: false
-
-  .actions
-    = yield(f)

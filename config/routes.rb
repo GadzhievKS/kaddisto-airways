@@ -9,15 +9,8 @@ Rails.application.routes.draw do
       registrations: 'users/registrations'
   }
 
+  resources :flights
   resources :tickets
-  resources :aircrafts
-  resources :airlines
-  resources :airports
-  resources :my_tickets do
-    resources :tickets
-  end
 
-
-  root 'application#index'
-
+  root 'flights#index'
 end

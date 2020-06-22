@@ -1,0 +1,5 @@
+- if @result == 'success'
+  $('.flights td.flight[data-flight-id='+@flight.id+']').find('a').remove();
+  $('.flights td.flight[data-flight-id='+@flight.id+']').text('Пожалуйста ожидайте подтверждение администратором!');
+- else
+  console.log('------3333-------');

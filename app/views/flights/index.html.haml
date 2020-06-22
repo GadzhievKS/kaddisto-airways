@@ -1,0 +1,25 @@
+.flights
+  %h1.text-center.title Бронивание Авибилетов
+  %table.table.table-bordered
+    %thead
+      %th №
+      %th Авиакомпания
+      %th Откуда
+      %th Куда
+      %th Время
+      %th Цена
+      %th Действия
+    %tbody
+      - @flights.each do |flight|
+        %tr
+          %td= flight.id
+          %td= flight.aircraft.name
+          %td= flight.from
+          %td= flight.to
+          %td= flight.departure_time
+          %td= flight.price
+          %td.flight{'data-flight-id': flight.id}
+            = link_to 'Забронировать',
+                      tickets_path(flight_id: flight),
+                      class: 'btn btn-default',
+                      data: {method: :post, remote: true}

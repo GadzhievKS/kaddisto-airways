@@ -22,9 +22,9 @@
             - if flight.tickets.pluck(:user_id).include?(current_user.id)
               %p{style: 'color: green;'} Забронировано
             - elsif flight.full?
-              %p{style: 'color: red;'}Мест нет
+              %p{style: 'color: red;'} Мест нет
             - else
               = link_to 'Забронировать',
                         tickets_path(flight_id: flight),
                         class: 'btn btn-default',
-                        data: {method: :post, remote: true}
+                        data: {method: :post}

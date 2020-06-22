@@ -7,6 +7,8 @@ class User < ApplicationRecord
   ROLES = %w[standard admin].freeze
   enum role: ROLES
 
+  has_many :tickets
+
   validates :first_name, :last_name, :role, presence: true
 
   def name

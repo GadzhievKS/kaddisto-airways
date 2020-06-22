@@ -3,21 +3,17 @@
   %table.table.table-bordered
     %thead
       %th №
+      %th Авиакомпания
       %th Откуда
       %th Куда
       %th Время
       %th Цена
-      %th Действия
     %tbody
       - @tickets.each do |ticket|
         %tr
           %td= ticket.id
-          %td= ticket.from
-          %td= ticket.to
+          %td= ticket.flight.aircraft.airline.name
+          %td= ticket.flight.from
+          %td= ticket.flight.to
           %td= ticket.departure_time
           %td= ticket.price
-          %td
-            = link_to 'Редактировать', edit_ticket_path(ticket),
-          class: 'btn btn-default'
-            = link_to 'Удалить',  ticket_path(ticket), method:  :delete,
-                                data: {confirm: 'Вы уверены?'}, class: 'btn btn-danger'

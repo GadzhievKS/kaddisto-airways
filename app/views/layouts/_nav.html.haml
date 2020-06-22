@@ -16,6 +16,9 @@
         - if  user_signed_in? && current_user.admin?
           %li
             = link_to 'Панель администратора', admin_root_path
+        - if  user_signed_in?
+          %li
+            = link_to 'Мои бронирования', tickets_path
         %li
           - if user_signed_in?
 

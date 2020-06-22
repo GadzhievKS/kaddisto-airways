@@ -11,5 +11,7 @@
     = render 'layouts/nav'
     .container
       - if notice
-        %p.alert.alert-success.text-center#notice= notice
+        %p.alert.alert-error.text-center#notice= notice
+      - if alert
+        %p.alert.alert-danger.text-center#alert=alert
       = yield

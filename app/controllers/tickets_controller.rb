@@ -18,7 +18,7 @@ class TicketsController < ApplicationController
       @flight.to_full!  if @flight.tickets.count >= @flight.aircraft.seat_counts.to_i
       redirect_to flights_path, notice: 'Вы успешно забронировали место!'
     else
-      redirect_to flights_path, error: 'Произошла ошибка, пожалуйста попробуйте еще раз!'
+      redirect_to flights_path, alert: 'Произошла ошибка, пожалуйста попробуйте еще раз!'
     end
   end
 

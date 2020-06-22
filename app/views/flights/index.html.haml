@@ -19,7 +19,12 @@
           %td= flight.departure_time
           %td= flight.price
           %td.flight{'data-flight-id': flight.id}
-            = link_to 'Забронировать',
-                      tickets_path(flight_id: flight),
-                      class: 'btn btn-default',
-                      data: {method: :post, remote: true}
+            - if flight.tickets.pluck(:user_id).include?(current_user.id)
+              %p{style: 'color: green;'} Забронировано
+            - elsif flight.state.full?
+              %p{style: 'color: red;'}Мест нет
+            - else
+              = link_to 'Забронировать',
+                        tickets_path(flight_id: flight),
+                        class: 'btn btn-default',
+                        data: {method: :post, remote: true}

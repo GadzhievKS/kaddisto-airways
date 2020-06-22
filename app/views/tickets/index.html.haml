@@ -9,9 +9,9 @@
       %th Время
       %th Цена
     %tbody
-      - @tickets.each do |ticket|
+      - @tickets.each_with_index do |ticket, index|
         %tr
-          %td= ticket.id
+          %td= index
           %td= ticket.flight.aircraft.airline.name
           %td= ticket.flight.from
           %td= ticket.flight.to

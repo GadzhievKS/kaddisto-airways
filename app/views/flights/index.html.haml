@@ -21,7 +21,7 @@
           %td.flight{'data-flight-id': flight.id}
             - if flight.tickets.pluck(:user_id).include?(current_user.id)
               %p{style: 'color: green;'} Забронировано
-            - elsif flight.state.full?
+            - elsif flight.full?
               %p{style: 'color: red;'}Мест нет
             - else
               = link_to 'Забронировать',

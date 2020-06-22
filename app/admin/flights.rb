@@ -31,7 +31,7 @@ ActiveAdmin.register Flight do
   show do
     attributes_table do
       row 'Авиокомпания' do |flight|
-        flight.airline.name
+        flight.aircraft.name
       end
       row 'Цена' do |flight|
         flight.price
